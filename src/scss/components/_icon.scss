@@ -74,3 +74,12 @@
     @include icon-style('@/assets/images/icon/ico-print.svg', 24px, 24px);
     background-color: #555555;
 }
+
+.ico-arrow{
+    @include icon-style('@/assets/images/icon/ico-arrow.svg', 24px, 24px);
+    background-color: #C6C6C6;
+}
+.ico-info{
+    @include icon-style('@/assets/images/icon/ico-info.svg', 14px, 14px);
+    background-color: #C6C6C6;
+}

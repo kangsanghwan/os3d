@@ -13,49 +13,109 @@
         </header>
         <div class="panel--cont layer" data-simplebar>
             <div class="layer-object-info">
-                <div class="accordion is-open">
+                <div class="accordion">
                     <div class="accordion__header">
-                        <span class="icon-box"><img src="./assets/images/header/ico-layer.png" alt="해양 객체 정보 아이콘" /></span>
-                        <span class="accordion__title">해양 객체 정보</span>
-                        <button class="accordion__arrow" aria-label="아코디언 열기/닫기"></button>
+                        <label class="label-checkbox">
+                            <input type="checkbox" id="layer-info" aria-label="해양 객체 정보 레이어 활성화" />
+                            <i aria-hidden="true"></i>
+                        </label>
+                        <button class="accordion__arrow" aria-label="해양 객체 정보 아코디언 열기/닫기" aria-expanded="false">
+                            <span class="accordion__title">해양 객체 정보</span>
+                            <i class="svg-icon ico-arrow"></i>
+                        </button>
                     </div>
                     <div class="accordion__body">
                         <div class="object-type-select">
-                            <button class="object-type-btn is-active">
-                                <span class="icon"><img src="./assets/images/header/ico-analysis.png" alt="양식장" /></span>
-                                양식장
-                                <span class="info-icon" title="정보"><img src="./assets/images/header/Vector.png" alt="정보" /></span>
-                            </button>
-                            <button class="object-type-btn">
-                                <span class="icon"><img src="./assets/images/header/ico-nav01.png" alt="어로 시설" /></span>
-                                어로 시설
-                                <span class="info-icon" title="정보"><img src="./assets/images/header/Vector.png" alt="정보" /></span>
-                            </button>
+                            <label class="object-type-btn">
+                                <input type="checkbox" aria-label="양식장 레이어 활성화" />
+                                <i class="svg-icon ico-layer-a-01" aria-hidden="true"></i>
+                                <span>양식장</span>
+                            </label>
+                            <button type="button" class="btn-tooltip" aria-label="정보 보기"><i class="svg-icon ico-info" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="object-type-select">
+                            <label class="object-type-btn">
+                                <input type="checkbox" aria-label="양식장 레이어 활성화" />
+                                <i class="svg-icon ico-layer-a-01" aria-hidden="true"></i>
+                                <span>양식장</span>
+                            </label>
+                            <button type="button" class="btn-tooltip" aria-label="정보 보기"><i class="svg-icon ico-info" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
+
                 <div class="accordion">
                     <div class="accordion__header">
-                        <input type="checkbox" id="depth-info" />
-                        <label for="depth-info">수심정보</label>
-                        <button class="accordion__arrow" aria-label="아코디언 열기/닫기"></button>
+                        <label class="label-checkbox">
+                            <input type="checkbox" id="layer-info" aria-label="해양 객체 정보 레이어 활성화" />
+                            <i aria-hidden="true"></i>
+                        </label>
+                        <button class="accordion__arrow" aria-label="해양 객체 정보 아코디언 열기/닫기" aria-expanded="true">
+                            <span class="accordion__title">해양 객체 정보</span>
+                            <i class="svg-icon ico-arrow"></i>
+                        </button>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="object-type-select">
+                            <label class="object-type-btn">
+                                <input type="checkbox" aria-label="양식장 레이어 활성화" />
+                                <i class="svg-icon ico-layer-a-01" aria-hidden="true"></i>
+                                <span>양식장</span>
+                            </label>
+                            <button type="button" class="btn-tooltip" aria-label="정보 보기"><i class="svg-icon ico-info" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="object-type-select">
+                            <label class="object-type-btn">
+                                <input type="checkbox" aria-label="양식장 레이어 활성화" />
+                                <i class="svg-icon ico-layer-a-01" aria-hidden="true"></i>
+                                <span>양식장</span>
+                            </label>
+                            <button type="button" class="btn-tooltip" aria-label="정보 보기"><i class="svg-icon ico-info" aria-hidden="true"></i></button>
+                        </div>
                     </div>
                 </div>
-                <div class="accordion">
-                    <div class="accordion__header">
-                        <input type="checkbox" id="sea-info" />
-                        <label for="sea-info">해수면 정보</label>
-                        <button class="accordion__arrow" aria-label="아코디언 열기/닫기"></button>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion__header">
-                        <input type="checkbox" id="reclamation-info" />
-                        <label for="reclamation-info">조간대 재질</label>
-                        <span class="info-icon" title="정보"><img src="./assets/images/header/Vector.png" alt="정보" /></span>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accordions = document.querySelectorAll('.accordion');
+    
+    accordions.forEach(accordion => {
+        const header = accordion.querySelector('.accordion__header');
+        const arrow = accordion.querySelector('.accordion__arrow');
+        
+        if (header) {
+            header.addEventListener('click', function(e) {
+                // 체크박스 클릭 시 아코디언 토글 방지
+                if (e.target.type === 'checkbox' || e.target.closest('.label-checkbox')) {
+                    return;
+                }
+                
+                const isOpen = accordion.classList.contains('is-open');
+                
+                // 모든 아코디언 닫기
+                accordions.forEach(acc => {
+                    acc.classList.remove('is-open');
+                    const accArrow = acc.querySelector('.accordion__arrow');
+                    if (accArrow) {
+                        accArrow.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // 클릭된 아코디언 열기
+                if (!isOpen) {
+                    accordion.classList.add('is-open');
+                    if (arrow) {
+                        arrow.setAttribute('aria-expanded', 'true');
+                    }
+                }
+            });
+        }
+    });
+});
+</script>
