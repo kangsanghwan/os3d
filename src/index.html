@@ -1,17 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Index Page</title>
-  <link rel="stylesheet" href="/scss/main.scss" />
-  <script src="/lib/swiper/swiper-bundle.min.js"></script>
-  <script type="module" src="/js/page/index.js"></script>
-</head>
-<body>
-  {{> header}}
-  
-  
 
-  {{> footer}}
+<head>
+	<meta charset="UTF-8" />
+	<title>3차원 해양공간 정보</title>
+	<!-- reset.style (Reset CSS) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" crossorigin="anonymous" />
+
+	<!-- Pretendard 웹폰트 (jsDelivr) -->
+	<!-- 모든 굵기를 포함한 Pretendard -->
+	
+	<link rel="stylesheet" href="./assets/fonts/pretendard.css" />
+	<link rel="stylesheet" href="/scss/main.scss" />
+	<link rel="stylesheet" href="/js/lib/simplebar.css">
+	<script src="/js/lib/simplebar.min.js"></script>
+</head>
+
+<body>
+	{{> header}}
+
+
+	<div class="poiPopup on" id="poiPopup" style="left: 1014px; top: 97px;">
+		<div class="head">
+			<img src="">
+			<span class="tit fontBd ft18">등대</span>
+			<i class="ico_close"
+				onclick="$('#poiPopup').removeClass('on');$('#poiPopup').css('display','none');measureEntityRemoveById('undefined')"></i>
+		</div>
+		<div class="con">
+			<div class="poiPopup_data_head">
+				<div class="data1">
+					<span class="tit">· 객체명 : </span>
+					<span class="txt">수영만어항 동방파제 (Suyeongman eo Hang)</span>
+				</div>
+			</div>
+			<div class="poiPopup_data">
+				<div class="data1">
+					<span class="tit">· 종 류 : </span>
+					<span class="txt">탑(Tower)</span>
+				</div>
+			</div>
+			<div class="poiPopup_data">
+				<div class="data1">
+					<span class="tit">· 색 상 : </span>
+					<span class="txt">빨간색(red)</span>
+				</div>
+			</div>
+			<div class="poiPopup_data">
+				<div class="data1">
+					<span class="tit">· 위 치 : </span>
+				</div>
+				<div class="data2">
+					<div class="data">
+						<span class="tit">위도</span>
+						<span class="txt">35˚9'41.60"</span>
+					</div>
+					<div class="data">
+						<span class="tit">경도</span>
+						<span class="txt">129˚8'5.70"</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{> footer}}
+	
+	<script>
+		(() => {
+			document.addEventListener('DOMContentLoaded', () => {
+				const navList = document.querySelector('.nav__list');
+				const closeBtns = document.querySelectorAll('.header__close-btn');
+				const toggleBtn = document.querySelector('.panel__toggle');
+				const panels = document.querySelectorAll('.viewer-app__panel');
+				const contentItems = document.querySelectorAll('.panel--viewer__con__item');
+
+				// helper functions
+				const resetToggle = () => {
+					if (!toggleBtn) return;
+					toggleBtn.classList.remove('is-collapsed');
+					toggleBtn.setAttribute('aria-expanded', 'true');
+					toggleBtn.setAttribute('aria-label', '패널 닫기');
+				};
+				const updateToggle = () => {
+					const active = document.querySelector('.viewer-app__panel.is-active');
+					if (!toggleBtn) return;
+					toggleBtn.classList.toggle('is-hidden', !active);
+					toggleBtn.setAttribute('aria-hidden', String(!active));
+				};
+				const hidePanels = () => panels.forEach(p => p.classList.remove('is-active', 'is-collapsed'));
+				const clearNav = () => document.querySelectorAll('.nav__item--active')
+					.forEach(item => item.classList.remove('nav__item--active'));
+
+				// 네비게이션 클릭 시 패널 전환
+				navList?.addEventListener('click', e => {
+					const link = e.target.closest('.nav__link');
+					if (!link) return;
+					e.preventDefault();
+					const target = link.dataset.target;
+
+					clearNav();
+					link.parentElement.classList.add('nav__item--active');
+					link.setAttribute('aria-current', 'page');
+
+					hidePanels();
+					document.querySelector(`.viewer-app__panel[data-panel="${target}"]`)?.classList.add('is-active');
+
+					resetToggle();
+					updateToggle();
+				});
+
+				// 닫기 버튼 클릭 시 패널 닫기
+				closeBtns.forEach(btn => btn.addEventListener('click', e => {
+					e.preventDefault();
+					hidePanels();
+					clearNav();
+					resetToggle();
+					updateToggle();
+				}));
+
+				// 공통 토글 버튼으로 패널 접기/펼치기
+				toggleBtn?.addEventListener('click', e => {
+					e.preventDefault();
+					const active = document.querySelector('.viewer-app__panel.is-active');
+					if (!active) return;
+					const collapsed = active.classList.toggle('is-collapsed');
+					toggleBtn.classList.toggle('is-collapsed', collapsed);
+					toggleBtn.setAttribute('aria-expanded', String(!collapsed));
+					toggleBtn.setAttribute('aria-label', collapsed ? '패널 열기' : '패널 닫기');
+				});
+
+				// 콘텐츠 아이템 클릭 시 해당 패널로 이동
+				contentItems.forEach(item => {
+					item.addEventListener('click', e => {
+						e.preventDefault();
+						const target = item.dataset.target;
+						if (!target) return;
+
+						// 네비게이션 상태 업데이트
+						clearNav();
+						document.querySelectorAll('.nav__link').forEach(link => {
+							if (link.dataset.target === target) {
+								link.parentElement.classList.add('nav__item--active');
+								link.setAttribute('aria-current', 'page');
+							}
+						});
+
+						// 패널 표시 전환
+						hidePanels();
+						document.querySelector(`.viewer-app__panel[data-panel="${target}"]`)?.classList.add('is-active');
+
+						resetToggle();
+						updateToggle();
+					});
+				});
+
+				// 초기 토글 버튼 상태 설정
+				updateToggle();
+			});
+		})();
+
+
+
+
+	</script>
 </body>
+
 </html>
