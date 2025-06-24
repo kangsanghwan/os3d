@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="ico_folder_group" transform="translate(-1811 -17)">
+    <circle id="타원_56" data-name="타원 56" cx="12" cy="12" r="12" transform="translate(1811 17)" fill="#fff"/>
+    <path id="ico_folder-download" d="M12.259,2.626,8.228,2.617,6.893,1.281A1.5,1.5,0,0,0,5.9.875H1.743A1.752,1.752,0,0,0,0,2.626v8.75H0a1.757,1.757,0,0,0,1.756,1.75H12.244A1.748,1.748,0,0,0,14,11.376v-7A1.75,1.75,0,0,0,12.259,2.626ZM9.7,8.272,7.328,10.648a.425.425,0,0,1-.6,0L4.351,8.272a.425.425,0,0,1,.3-.726H6.177V5.53a.851.851,0,1,1,1.7,0V7.546H9.4A.425.425,0,0,1,9.7,8.272Z" transform="translate(1816 22.125)" fill="#283c50" fill-rule="evenodd"/>
+  </g>
+</svg>

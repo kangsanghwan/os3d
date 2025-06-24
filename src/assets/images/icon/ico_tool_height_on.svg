@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ico_tool_height" transform="translate(-15 -205)">
+    <g id="그룹_126" data-name="그룹 126" transform="translate(9.354 -43.675)">
+      <path id="패스_39" data-name="패스 39" d="M-178.473,218.475h-6.762c-.56,0-1.014.63-1.014,1.407s.454,1.407,1.014,1.407h6.762c.56,0,1.014-.63,1.014-1.407S-177.913,218.475-178.473,218.475Z" transform="translate(197.5 32.2)" fill="#e5e7eb"/>
+      <path id="패스_40" data-name="패스 40" d="M-178.473,218.475h-6.762c-.56,0-1.014.63-1.014,1.407s.454,1.407,1.014,1.407h6.762c.56,0,1.014-.63,1.014-1.407S-177.913,218.475-178.473,218.475Z" transform="translate(197.5 45.387)" fill="#e5e7eb"/>
+      <rect id="사각형_64" data-name="사각형 64" width="2.93" height="1.465" rx="0.733" transform="translate(14.18 255.012)" fill="#e5e7eb"/>
+      <rect id="사각형_65" data-name="사각형 65" width="2.93" height="1.465" rx="0.733" transform="translate(14.18 257.942)" fill="#e5e7eb"/>
+      <rect id="사각형_66" data-name="사각형 66" width="2.93" height="1.465" rx="0.733" transform="translate(14.18 260.873)" fill="#e5e7eb"/>
+    </g>
+    <rect id="사각형_186" data-name="사각형 186" width="20" height="20" transform="translate(15 205)" fill="none"/>
+  </g>
+</svg>

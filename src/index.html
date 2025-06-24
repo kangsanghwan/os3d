@@ -19,11 +19,13 @@
 <body>
 <div class="viewer-app">
 	<a href="#main-content" class="skip-link">본문 바로가기</a>
-	<!-- 사이드바 -->
-	{{> side}}
+	
 
 	<!-- 패널 영역 -->
 	<div id="main-content" class="viewer-app__panels">
+		<!-- 사이드바 -->
+		{{> side}}
+
 		<!-- 뷰어 홈 패널 -->
 		{{> panel-home}}
 		
@@ -40,10 +42,8 @@
 	</div>
 	<!-- // 패널 -->
 
-
 	<!-- 지도 영역 -->
 	<div class="map-area">
-
 		<!-- 지도 출력 -->
 		<div id="map"></div>
 		<!-- // 지도 출력 -->
@@ -52,7 +52,6 @@
 		{{> map-control}}
 	</div>
 	<!-- // 지도 영역 -->
-
 
 	<!-- utils -->
 	<div class="poiPopup" id="poiPopup" style="left: 1014px; top: 97px;">
@@ -98,6 +97,7 @@
 			</div>
 		</div>
 	</div>
+	
 </div>
 
 	

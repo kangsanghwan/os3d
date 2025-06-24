@@ -562,7 +562,7 @@ body{
         transform: translateY(-50%) translateX(20%);
         background: #222;
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 15px;
         font-weight: 500;
         padding: 0.6rem 1.2rem;
         border-radius: 0.8rem;
@@ -586,7 +586,12 @@ body{
     }
     &:hover{
         background: #f0f0f0;
+        .btn-tooltip{
+            opacity: 1;
+            visibility: visible;
+        }
     }
+
 }
 
 

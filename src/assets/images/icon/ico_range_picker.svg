@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ico_range_picker" transform="translate(-977.973 -6902.973)">
+    <rect id="btn" width="20" height="20" rx="4" transform="translate(977.973 6902.973)" fill="#456074"/>
+    <path id="switch" d="M6.552,10.646V.82A.819.819,0,1,1,8.19.82v9.826a.819.819,0,1,1-1.638,0Zm-3.275,0V.82a.818.818,0,1,1,1.637,0v9.826a.818.818,0,1,1-1.637,0ZM0,10.646V.82a.819.819,0,1,1,1.638,0v9.826a.819.819,0,1,1-1.638,0Z" transform="translate(983.878 6907.239)" fill="#fff"/>
+  </g>
+</svg>

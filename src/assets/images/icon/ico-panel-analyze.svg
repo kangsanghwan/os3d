@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ico-panel-analyze" transform="translate(-102 -3564)">
+    <g id="Analytics" transform="translate(-344 2445.729)">
+      <g id="그룹_618" data-name="그룹 618" transform="translate(448 1120.271)">
+        <path id="패스_102" data-name="패스 102" d="M448,1121.722v13.1a1.431,1.431,0,0,0,1.385,1.451h.562a1.424,1.424,0,0,0,1.394-1.451v-13.1a1.424,1.424,0,0,0-1.394-1.451h-.563A1.43,1.43,0,0,0,448,1121.722Z" transform="translate(-448 -1120.271)" fill="#424242"/>
+      </g>
+      <g id="그룹_619" data-name="그룹 619" transform="translate(454.329 1127.908)">
+        <path id="패스_103" data-name="패스 103" d="M453.538,1128.147v5.46a1.43,1.43,0,0,0,1.385,1.451h.562a1.424,1.424,0,0,0,1.394-1.451v-5.46a1.425,1.425,0,0,0-1.394-1.451h-.563A1.43,1.43,0,0,0,453.538,1128.147Z" transform="translate(-453.538 -1126.696)" fill="#424242"/>
+      </g>
+      <g id="그룹_620" data-name="그룹 620" transform="translate(460.658 1123.761)">
+        <path id="패스_104" data-name="패스 104" d="M459.076,1124.659v9.606a1.431,1.431,0,0,0,1.385,1.452h.562a1.425,1.425,0,0,0,1.394-1.452v-9.606a1.426,1.426,0,0,0-1.394-1.452h-.563A1.431,1.431,0,0,0,459.076,1124.659Z" transform="translate(-459.076 -1123.207)" fill="#424242"/>
+      </g>
+    </g>
+    <rect id="사각형_504" data-name="사각형 504" width="20" height="20" transform="translate(102 3564)" fill="none"/>
+  </g>
+</svg>

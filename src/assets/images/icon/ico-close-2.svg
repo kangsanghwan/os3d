@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42" height="42" viewBox="0 0 42 42">
+  <defs>
+    <filter id="타원_78" x="0" y="0" width="42" height="42" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="ico-close-2" transform="translate(-726 -78)">
+    <g transform="matrix(1, 0, 0, 1, 726, 78)" filter="url(#타원_78)">
+      <circle id="타원_78-2" data-name="타원 78" cx="12" cy="12" r="12" transform="translate(9 6)" fill="#f6f6f6"/>
+    </g>
+    <path id="Close" d="M399.924,170.4l-2.022,2.022-2.025-2.023a1.157,1.157,0,1,0-1.636,1.637l2.023,2.023-2.021,2.022a1.158,1.158,0,0,0,1.638,1.638L397.9,175.7l2.022,2.022a1.157,1.157,0,1,0,1.637-1.636l-2.022-2.024,2.022-2.022a1.158,1.158,0,0,0-1.638-1.638Z" transform="translate(349.098 -78.059)" fill="#505153" fill-rule="evenodd"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ico-tool-coordinate" transform="translate(-15 -495)">
+    <rect id="ico-mask-20px" width="20" height="20" transform="translate(15 495)" fill="none"/>
+    <g id="path" transform="translate(12.6 495)">
+      <path id="패스_834" data-name="패스 834" d="M13,8.146V16a.6.6,0,1,0,1.2,0V8.146a3.6,3.6,0,1,0-1.2,0Z" transform="translate(-1.2)" fill="#196dff"/>
+      <path id="패스_835" data-name="패스 835" d="M13.6,21.117v2.93a1.2,1.2,0,1,1-2.4,0v-2.93C8.739,21.4,7,22.567,7,24.047c0,1.711,2.321,3,5.4,3s5.4-1.289,5.4-3C17.8,22.567,16.061,21.4,13.6,21.117Z" transform="translate(0 -8.047)" fill="#196dff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ico_sq_set" transform="translate(-15 -15)">
+    <rect id="사각형_192" data-name="사각형 192" width="20" height="20" transform="translate(15 15)" fill="none"/>
+    <g id="Laptop" transform="translate(17 17.25)">
+      <path id="패스_810" data-name="패스 810" d="M14.251,2.872a1.124,1.124,0,0,0-1.127-1.121H2.5A1.124,1.124,0,0,0,1.373,2.872v7.2H14.251Z" transform="translate(0.196 0)" fill="#283c50"/>
+      <path id="패스_811" data-name="패스 811" d="M15.339,10.524H9.974a.953.953,0,0,0-.771.558.6.6,0,0,1-.536.33H7.334a.6.6,0,0,1-.536-.33.953.953,0,0,0-.771-.558H.661A.659.659,0,0,0,0,11.181,1.318,1.318,0,0,0,1.321,12.5H14.679A1.318,1.318,0,0,0,16,11.181.659.659,0,0,0,15.339,10.524Z" transform="translate(0 1.253)" fill="#283c50"/>
+    </g>
+  </g>
+</svg>

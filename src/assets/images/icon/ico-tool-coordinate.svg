@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ico-tool-coordinate" transform="translate(-15 -495)">
+    <rect id="ico-mask-20px" width="20" height="20" transform="translate(15 495)" fill="none"/>
+    <g id="path" transform="translate(12.6 495)">
+      <path id="path-2" data-name="path" d="M9375.4,3263c0-1.479,1.738-2.643,4.2-2.93V3263a1.2,1.2,0,1,0,2.4,0v-2.93c2.461.287,4.2,1.451,4.2,2.93,0,1.71-2.323,3-5.4,3S9375.4,3264.71,9375.4,3263Zm4.8,0v-7.854a3.6,3.6,0,1,1,1.2,0V3263a.6.6,0,1,1-1.2,0Z" transform="translate(-9368.4 -3247)" fill="#424242" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

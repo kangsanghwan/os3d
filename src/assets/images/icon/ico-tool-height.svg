@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="ico-tool-height" transform="translate(-15 -305)">
+    <g id="path" transform="translate(8.805 55.325)">
+      <path id="패스_39" data-name="패스 39" d="M-177.5,218.475h-7.608c-.63,0-1.141.709-1.141,1.582s.511,1.582,1.141,1.582h7.608c.63,0,1.141-.709,1.141-1.582S-176.871,218.475-177.5,218.475Z" transform="translate(197.5 32.2)" fill="#424242"/>
+      <path id="패스_40" data-name="패스 40" d="M-177.5,218.475h-7.608c-.63,0-1.141.709-1.141,1.582s.511,1.582,1.141,1.582h7.608c.63,0,1.141-.709,1.141-1.582S-176.871,218.475-177.5,218.475Z" transform="translate(197.5 47.035)" fill="#424242"/>
+      <rect id="사각형_64" data-name="사각형 64" width="3.297" height="1.648" rx="0.824" transform="translate(14.547 255.554)" fill="#424242"/>
+      <rect id="사각형_65" data-name="사각형 65" width="3.297" height="1.648" rx="0.824" transform="translate(14.547 258.851)" fill="#424242"/>
+      <rect id="사각형_66" data-name="사각형 66" width="3.297" height="1.648" rx="0.824" transform="translate(14.547 262.148)" fill="#424242"/>
+    </g>
+    <rect id="ico-mask-20px" width="20" height="20" transform="translate(15 305)" fill="none"/>
+  </g>
+</svg>
