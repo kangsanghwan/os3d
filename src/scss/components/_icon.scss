@@ -1,0 +1,76 @@
+.svg-icon{
+    forced-color-adjust: none;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    display: inline-flex;
+    transition: all .5s;
+}
+// 아이콘 mixin 정의
+@mixin icon-style($icon-url, $width: 2.7rem, $height: 2.7rem) {
+    -webkit-mask-image: url($icon-url);
+    mask-image: url($icon-url);
+    width: $width;
+    height: $height;
+}
+
+.ico-guide{
+    @include icon-style('@/assets/images/icon/ico-guide.svg', 24px, 24px);
+    background-color: #196DFF;
+}
+.ico-zoom-in{
+    @include icon-style('@/assets/images/icon/ico-zoom-in.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-zoom-out{
+    @include icon-style('@/assets/images/icon/ico-zoom-out.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-distance{
+    @include icon-style('@/assets/images/icon/ico-distance.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-area{
+    @include icon-style('@/assets/images/icon/ico-area.svg', 24px, 24px);
+    background-color: #555555;
+}
+
+.ico-height{
+    @include icon-style('@/assets/images/icon/ico-height.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-area2{
+    @include icon-style('@/assets/images/icon/ico-area2.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-measurement{
+    @include icon-style('@/assets/images/icon/ico-measurement.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-sea1{
+    @include icon-style('@/assets/images/icon/ico-sea1.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-sea2{
+    @include icon-style('@/assets/images/icon/ico-sea2.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-tide{
+    @include icon-style('@/assets/images/icon/ico-tide.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-coordinate{
+    @include icon-style('@/assets/images/icon/ico-coordinate.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-screen-save{
+    @include icon-style('@/assets/images/icon/ico-screen-save.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-print{
+    @include icon-style('@/assets/images/icon/ico-print.svg', 24px, 24px);
+    background-color: #555555;
+}

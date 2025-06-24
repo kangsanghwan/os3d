@@ -17,10 +17,45 @@
 </head>
 
 <body>
-	{{> header}}
+<div class="viewer-app">
+	<a href="#main-content" class="skip-link">본문 바로가기</a>
+	<!-- 사이드바 -->
+	{{> side}}
+
+	<!-- 패널 영역 -->
+	<div id="main-content" class="viewer-app__panels">
+		<!-- 뷰어 홈 패널 -->
+		{{> panel-home}}
+		
+		<!-- 레이어 패널 -->
+		{{> panel-layer}}
+
+		<!-- 해양관측 패널 -->
+		{{> panel-observe}}
+
+		<!-- 분석/시뮬레이션 패널 -->
+		{{> panel-analysis}}
+
+		<button class="panel__toggle"><i class="icon-arrow"></i></button>
+	</div>
+	<!-- // 패널 -->
 
 
-	<div class="poiPopup on" id="poiPopup" style="left: 1014px; top: 97px;">
+	<!-- 지도 영역 -->
+	<div class="map-area">
+
+		<!-- 지도 출력 -->
+		<div id="map"></div>
+		<!-- // 지도 출력 -->
+
+		<!-- 지도 컨트롤 -->
+		{{> map-control}}
+	</div>
+	<!-- // 지도 영역 -->
+
+
+	<!-- utils -->
+	<div class="poiPopup" id="poiPopup" style="left: 1014px; top: 97px;">
 		<div class="head">
 			<img src="">
 			<span class="tit fontBd ft18">등대</span>
@@ -63,8 +98,8 @@
 			</div>
 		</div>
 	</div>
+</div>
 
-	{{> footer}}
 	
 	<script>
 		(() => {
