@@ -1,3 +1,26 @@
+$color-sidebar-bg: #002f5c;
+$color-sidebar-hover: #0052a3;
+$color-primary: #196DFF;
+$color-text: #333;
+$color-muted: #666;
+
+.tac{
+    text-align: center;
+}
 .button {
-  
+
+}
+.btn{
+    padding: 8.5px 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    &.block{
+        width: 100%;
+        display: block;
+    }
+}
+.btn-sky{
+    background: rgba(25,109,255,0.1);
+    color: $color-primary;
+    border: 1px solid $color-primary;
 }

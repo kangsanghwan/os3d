@@ -1,18 +1,293 @@
-<section class="viewer-app__panel panel--analysis" data-panel="analysis">
-<div class="viewer-app__panel__inner">
-    <header class="panel__header mbb">
-        <div class="panel__header__inner">
-            <h2 class="header__title">분석 시뮬레이션</h2>
-            <button class="header__close-btn" aria-label="패널 닫기">
-                <img src="./assets/images/header/panel-colse.png" alt="닫기버튼 이미지" />
-            </button>
+<!-- 분석 시뮬레이션 리스트 -->
+<!-- <section class="viewer-app__panel panel--analysist" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel__header__inner">
+                <h2 class="header__title">분석 시뮬레이션</h2>
+                <button class="header__close-btn" aria-label="패널 닫기">
+                    <img src="./assets/images/header/panel-colse.png" alt="닫기버튼 이미지" />
+                </button>
+            </div>
+            <p class="header__intro">
+                다양한 해양환경을 3차원 형태로 가시화하여 해양정보에 대한 시뮬레이션 및 분석을 할 수 있습니다.
+            </p>
+        </header>
+        <div class="panel--cont analysis__list" data-simplebar>
+            <div class="menu-card-list">
+                <a href="#" class="menu-card" aria-label="조간대 분석, 조석예보 정보를 활용하여 고조 및 저조를 시각화합니다.">
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">조간대 분석</h3>
+                        <p class="menu-card__desc">
+                            조석예보 정보를 활용하여 고조 및 저조를 시각화합니다.
+                        </p>
+                    </div>
+                    <span class="menu-card__arrow" aria-hidden="true">
+                    </span>
+                </a>
+
+                <a href="#" class="menu-card" aria-label="선박 연안 접근 가능구역 분석, 선박(용도, 톤수)별 연안접근 가능 구역을 시각화합니다.">
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">선박 연안 접근 가능구역 분석</h3>
+                        <p class="menu-card__desc">
+                            선박(용도, 톤수)별 연안접근 가능 구역을 시각화합니다.
+                        </p>
+                    </div>
+                    <span class="menu-card__arrow" aria-hidden="true">
+                    </span>
+                </a>
+            </div>
         </div>
-        <p class="header__intro">
-            다양한 해양환경을 3차원 형태로 가시화하여 해양정보에 대한 시뮬레이션 및 분석을 할 수 있습니다.
-        </p>	
-    </header>
-    <div class="panel--cont observe" data-simplebar>
-        데이터 넣는 부분  -  스크롤 기능 
     </div>
-</div>
+</section> -->
+
+<!-- 수위예측선 분석 -->
+<!-- <section class="viewer-app__panel panel--analysis is-active" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel--analysis__head">
+                <div class="panel--analysis__head__inner">
+                    <h2>수위예측선 분석</h2>
+                    <button class="header__close-btn" aria-label="패널 닫기">
+                        <img src="./assets/images/header/panel-colse02.png" alt="닫기버튼 이미지" />
+                    </button>
+                </div>
+                <p class="header--analysis__intro">
+                    조시차와 조고비를 반영한 예측 수위를<br>시각화 하여 표현합니다.
+                </p>
+            </div>
+        </header>
+        <div class="panel--cont analysis" data-simplebar>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">기타 관측 정보</h3>
+
+                <div class="legend-box" aria-labelledby="legendTitle">
+                    <div class="legend-box__header">
+                        <h3 class="legend-box__title" id="legendTitle">수위 예측선 범례</h3>
+                        <span class="legend-box__unit">(기준 : 수위)</span>
+                    </div>
+                    <div class="legend-box__range">
+                        <div class="legend-box__item legend-box__item--danger" aria-label="위험: 100cm 이상">
+                            <span class="legend-box__label">위험</span>
+                            <span class="legend-box__desc">100cm 이상</span>
+                        </div>
+                        <div class="legend-box__item legend-box__item--warning" aria-label="보통: 70cm 이상">
+                            <span class="legend-box__label">보통</span>
+                            <span class="legend-box__desc">70cm 이상</span>
+                        </div>
+                        <div class="legend-box__item legend-box__item--safe" aria-label="안전: 70cm 미만">
+                            <span class="legend-box__label">안전</span>
+                            <span class="legend-box__desc">70cm 미만</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="observation-form" aria-labelledby="formTitle">
+                    <fieldset class="form-fieldset">
+                        <div class="form-group">
+                            <label class="form-label" for="obsDate">관측 일자</label>
+                            <input type="date" class="form-input" id="obsDate" name="obsDate" autocomplete="off"
+                                aria-describedby="dateFormatDesc" required>
+                            <span id="dateFormatDesc" class="sr-only">
+                                날짜를 선택하거나 입력하세요. 예시: 2025-06-25
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="data">관측시간</label>
+                            <div class="flex">
+                                <select class="form-select" id="dataTime" name="dataTimehour" required
+                                    aria-required="true">
+                                    <option value="busan">14시</option>
+                                </select>
+                                <select class="form-select" id="dataTime" name="dataTimeminute" required
+                                    aria-required="true">
+                                    <option value="busan">25분</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-submit-wrap">
+                            <button type="submit" class="form-submit">수위 예측 지점 선택</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <ul class="guide-list">
+                    <li>수위 예측 지점을 지도상에서 클릭하세요.</li>
+                    <li>지점을 선택하면 해당 위치 기반의 수위 예측선을 표출합니다.</li>
+                </ul>
+                
+            </div>
+
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">시뮬레이션</h3>
+                <div class="simul--section">
+                    <div style="height: 160px;">
+                        차트영역
+                    </div>
+                    <div class="simul-option">
+                        <button class="play-btn" aria-label="재생"></button>
+                        <label for="customRange" class="sr-only">값 조절 슬라이더</label>
+                        <input type="range" min="0" max="100" value="35" class="custom-slider" id="customRange"
+                            aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-label="값 조절 슬라이더">
+                        <span class="interval">간격 : 10분</span>
+                    </div>
+                </div>
+                <ul class="guide-list">
+                    <li>수위 변화를 시간 흐름에 따라 표현합니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- 준설량 계산 시뮬레이션 -->
+<section class="viewer-app__panel panel--analysis is-active" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel--analysis__head">
+                <div class="panel--analysis__head__inner">
+                    <h2>준설량 계산 시뮬레이션</h2>
+                    <button class="header__close-btn" aria-label="패널 닫기">
+                        <img src="./assets/images/header/panel-colse02.png" alt="닫기버튼 이미지" />
+                    </button>
+                </div>
+                <p class="header--analysis__intro">
+                    수심 유지가 필요한 지역에 대해서 준설 전 준설량 모의 계산을 지원합니다.
+                </p>
+            </div>
+        </header>
+        <div class="panel--cont analysis" data-simplebar>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">준설량 모의 계산</h3>
+
+                <div  class="step-section" aria-labelledby="stepTitle1">
+                    <h3 class="step-section__title" id="stepTitle1">
+                        <span class="step-section__number">01.</span>
+                        측량 성과 업로드
+                    </h3>
+                    <div class="step-section__content">
+                        <div class="step-dropzone" tabindex="0" aria-label="파일 첨부 영역. 파일을 끌어다 놓거나 업로드 버튼을 이용하세요.">
+                            <p class="step-dropzone__desc">
+                                첨부할 파일을 여기에 끌어다 놓거나.<br>
+                                파일 업로드 버튼을 직접 선택해 주세요.
+                            </p>
+                            <label class="step-dropzone__btn" for="fileInput1">
+                                측량 성과 파일 업로드
+                                <input type="file" id="fileInput1" class="sr-only" aria-label="측량 성과 파일 업로드" multiple>
+                            </label>
+                        </div>
+                        <!-- 파일 리스트 표출 영역 -->
+                        <ul class="step-filelist" id="fileList1" aria-live="polite" aria-label="업로드된 파일 목록">
+                            <!-- 동적 표출 -->
+                            <!-- 예시:
+                            <li class="step-filelist__item">
+                                <span class="step-filelist__name">result-20240630.csv</span>
+                                <button type="button" class="step-filelist__remove" aria-label="파일 삭제">×</button>
+                            </li>
+                            -->
+                        </ul>
+                        <ul class="guide-list">
+                            <li>준설 전 측량자료가 있는 경우 업로드하세요. 없다면 24년 4월 측량된 자료를 기반으로 준설량을 계산합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-section" aria-labelledby="stepTitle2">
+                    <h3 class="step-section__title" id="stepTitle2">
+                        <span class="step-section__number">02.</span>
+                        측량 성과 업로드
+                    </h3>
+                    <div class="tab-group" role="tablist" aria-label="준설 영역 설정 선택">
+                        <button type="button" class="tab-group__tab tab-group__tab--selected" role="tab" aria-selected="true" aria-controls="tab-panel-upload01" id="uploadTab01" tabindex="0">파일 업로드</button>
+                        <button type="button" class="tab-group__tab" role="tab" aria-selected="false" aria-controls="tab-panel-upload02" id="uploadTab02" tabindex="-1">영역 직접 선택</button>
+                    </div>
+                    <div id="tab-panel-upload01" role="tabpanel" aria-labelledby="uploadTab01">
+                        <div class="step-section__content">
+                            <div class="step-dropzone" tabindex="0" aria-label="파일 첨부 영역. 파일을 끌어다 놓거나 업로드 버튼을 이용하세요.">
+                                <p class="step-dropzone__desc">
+                                    첨부할 파일을 여기에 끌어다 놓거나.<br>
+                                    파일 업로드 버튼을 직접 선택해 주세요.
+                                </p>
+                                <label class="step-dropzone__btn" for="fileInput2">
+                                    준설 영역 파일 업로드
+                                    <input type="file" id="fileInput2" class="sr-only" aria-label="준설 영역 파일 업로드" multiple>
+                                </label>
+                            </div>
+                            <!-- 파일 리스트 표출 영역 -->
+                            <ul class="step-filelist" id="fileList2" aria-live="polite" aria-label="업로드된 파일 목록">
+                                <!-- 동적 표출 -->
+                                <!-- 예시:
+                                <li class="step-filelist__item">
+                                    <span class="step-filelist__name">result-20240630.csv</span>
+                                    <button type="button" class="step-filelist__remove" aria-label="파일 삭제">×</button>
+                                </li>
+                                -->
+                            </ul>
+                            <ul class="guide-list">
+                                <li>파일은 SHP 파일 형식을 지원합니다.</li>
+                                <li>업로드 용량은 50Mb 이하만 가능합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="tab-panel-upload02" role="tabpanel" aria-labelledby="uploadTab02">
+                        <div class="step-dropzone self">
+                            <h4><i></i>영역 직접 선택하기</h4>
+                            <p class="step-dropzone__desc">
+                                지도에서 영역을 직접 클릭하여<br>
+                                다각형 영역을 선택해주세요.
+                            </p>
+                            <button class="step-dropzone__btn">
+                                직접 영역 선택하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-section" aria-labelledby="stepTitle2">
+                    <h3 class="step-section__title" id="stepTitle2">
+                        <span class="step-section__number">03.</span>
+                        유지 수심 (단위 m)
+                    </h3>
+                    <form class="calc-form" autocomplete="off" onsubmit="return false;">
+                        <input type="number" class="form-input calc-input" placeholder="값을 입력하세요" aria-label="준설량" value="10" required>
+                        <div class="form-submit-wrap">
+                            <button type="submit" class="form-submit">조회 하기</button>
+                        </div>
+                    </form>
+                    <ul class="guide-list">
+                        <li>준설량 계산에는 시간이 소요됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">준설량 모의 계산</h3>
+                <section class="observation-etc">
+                    <dl class="observation-etc__list">
+                        <div class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>면적</dt>
+                            <dd><span class="observation-etc__value">152</span> <span class="observation-etc__unit">㎡</span></dd>
+                        </div>
+                        <div class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>최고 높이</dt>
+                            <dd><span class="observation-etc__value">10</span> <span class="observation-etc__unit">m</span></dd>
+                        </div>
+                        <div class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>최저 높이</dt>
+                            <dd><span class="observation-etc__value">2</span> <span class="observation-etc__unit">m</span></dd>
+                        </div>
+                        <div class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>평균 높이</dt>
+                            <dd><span class="observation-etc__value">8</span> <span class="observation-etc__unit">m</span></dd>
+                        </div>
+                        <div class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>준설 평균 깊이</dt>
+                            <dd><span class="observation-etc__value">5</span> <span class="observation-etc__unit">m</span></dd>
+                        </div>
+                        <div class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>준설량</dt>
+                            <dd><span class="observation-etc__value">241</span> <span class="observation-etc__unit">㎥</span></dd>
+                        </div>
+                    </dl>
+                </section>
+            </div>
+        </div>
+    </div>
 </section>

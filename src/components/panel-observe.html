@@ -9,10 +9,238 @@
             </div>
             <p class="header__intro">
                 실시간 관측(예측) 정보를 통한 조위와 함께<br>기타 관측정보(풍향, 기온 등)를 제공합니다.
-            </p>	
+            </p>
         </header>
         <div class="panel--cont observe" data-simplebar>
-            데이터 넣는 부분  -  스크롤 기능
+            <div class="panel--cont__item mbb">
+                <form class="observation-form" aria-labelledby="formTitle">
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend" id="formTitle">관측소 / 관측부이 선택</legend>
+                        <section class="tab-section">
+                            <div class="tab-group" role="tablist" aria-label="관측소 또는 관측부이 선택">
+                                <button type="button" class="tab-group__tab tab-group__tab--selected" role="tab"
+                                    aria-selected="true" aria-controls="tab-panel-station" id="stationTab"
+                                    tabindex="0">관측소</button>
+                                <button type="button" class="tab-group__tab" role="tab" aria-selected="false"
+                                    aria-controls="tab-panel-buoy" id="buoyTab" tabindex="-1">관측부이</button>
+                            </div>
+                            <!-- 탭 패널 - 관측소 -->
+                            <div id="tab-panel-station" role="tabpanel" aria-labelledby="stationTab">
+                                <div class="form-group">
+                                    <label class="form-label sr-only" for="stationList">관측소</label>
+                                    <select class="form-select" id="stationList" name="station" required
+                                        aria-required="true">
+                                        <option value="">관측소를 선택하세요</option>
+                                        <option value="busan">부산항신항 조위관측소</option>
+                                    </select>
+                                    <button type="button" class="btn btn-sky block">관측소 정보 보기</button>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="obsDate">관측 일자 설정</label>
+                                    <input type="date" class="form-input" id="obsDate" name="obsDate" autocomplete="off"
+                                        aria-describedby="dateFormatDesc" required>
+                                    <span id="dateFormatDesc" class="sr-only">
+                                        날짜를 선택하거나 입력하세요. 예시: 2025-06-25
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- 탭 패널 - 관측부이 선택 -->
+                            <div id="tab-panel-buoy" role="tabpanel" aria-labelledby="buoyTab" hidden>
+                                <div class="form-group">
+                                    <label class="form-label" for="buoyList">관측부이</label>
+                                    <select class="form-select" id="buoyList" name="buoy">
+                                        <option value="">관측부이를 선택하세요</option>
+                                        <option value="buoy1">부이1</option>
+                                        <option value="buoy2">부이2</option>
+                                    </select>
+                                </div>
+                                <!-- 부이 선택에 따른 하위 인풋 등 필요시 추가 -->
+                            </div>
+                            <div class="form-submit-wrap">
+                                <button type="submit" class="form-submit">조회 하기</button>
+                            </div>
+                        </section>
+                    </fieldset>
+                </form>
+            </div>
+
+
+            <!-- 카드 - 관측소 관측부이 선택 -->
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">관측소 / 관측부이 선택</h3>
+                <div class="observation-card" role="group" aria-labelledby="observationTitle01">
+                    <div class="observation-card__head">
+                        <button type="button" class="observation-card__check-btn" aria-pressed="true"
+                            aria-controls="observationContent01" id="observationCheck" tabindex="0">
+                            <!-- 체크 아이콘 (활성 시 파란색) -->
+                            <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
+                                <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="sr-only">관측 활성화</span>
+                        </button>
+                        <span class="observation-card__title" id="observationTitle01"><b>관측</b></span>
+                    </div>
+                    <div class="observation-card__content" id="observationContent01">
+                        <div class="observation-card__item">
+                            <label class="observation-card__radio-label">
+                                <input type="radio" name="timeSelect" class="observation-card__radio"
+                                    aria-label="관측 시간 직접 선택" disabled>
+                                <span class="observation-card__radio-custom"></span>
+                            </label>
+                            <span class="observation-card__time-input" aria-label="관측 시간: 15시 30분">
+                                <span class="observation-card__icon" aria-hidden="true"></span>
+                                <span class="observation-card__time-text">15:30</span>
+                            </span>
+                            <span class="observation-card__value" aria-label="값">105</span>
+                        </div>
+                        <div class="observation-card__item">
+                            <label class="observation-card__radio-label">
+                                <input type="radio" name="timeSelect" class="observation-card__radio"
+                                    aria-label="관측 시간 직접 선택" disabled>
+                                <span class="observation-card__radio-custom"></span>
+                            </label>
+                            <span class="observation-card__time-input" aria-label="관측 시간: 15시 30분">
+                                <span class="observation-card__icon" aria-hidden="true"></span>
+                                <span class="observation-card__time-text">15:30</span>
+                            </span>
+                            <span class="observation-card__value" aria-label="값">105</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="observation-card" role="group" aria-labelledby="observationTitle02">
+                    <div class="observation-card__head">
+                        <button type="button" class="observation-card__check-btn" aria-pressed="true"
+                            aria-controls="observationContent02" id="observationCheck" tabindex="0">
+                            <!-- 체크 아이콘 (활성 시 파란색) -->
+                            <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
+                                <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="sr-only">예측 활성화</span>
+                        </button>
+                        <span class="observation-card__title" id="observationTitle02"><b>예측</b></span>
+                    </div>
+                    <div class="observation-card__content" id="observationContent01">
+                        <div class="observation-card__item">
+                            <label class="observation-card__radio-label">
+                                <input type="radio" name="timeSelect" class="observation-card__radio"
+                                    aria-label="예측 시간 직접 선택" disabled>
+                                <span class="observation-card__radio-custom"></span>
+                            </label>
+                            <span class="observation-card__time-input" aria-label="예측 시간: 15시 30분">
+                                <span class="observation-card__icon" aria-hidden="true"></span>
+                                <span class="observation-card__time-text">15:30</span>
+                            </span>
+                            <span class="observation-card__high" aria-label="고">고</span>
+                            <span class="observation-card__value" aria-label="값">105</span>
+                        </div>
+                        <div class="observation-card__item">
+                            <label class="observation-card__radio-label">
+                                <input type="radio" name="timeSelect" class="observation-card__radio"
+                                    aria-label="예측 시간 직접 선택" disabled>
+                                <span class="observation-card__radio-custom"></span>
+                            </label>
+                            <span class="observation-card__time-input" aria-label="예측 시간: 15시 30분">
+                                <span class="observation-card__icon" aria-hidden="true"></span>
+                                <span class="observation-card__time-text">15:30</span>
+                            </span>
+                            <span class="observation-card__low" aria-label="저">저</span>
+                            <span class="observation-card__value" aria-label="값">105</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="observation-card" role="group" aria-labelledby="observationTitle02">
+                    <div class="observation-card__head">
+                        <button type="button" class="observation-card__check-btn" aria-pressed="true"
+                            aria-controls="observationContent02" id="observationCheck" tabindex="0">
+                            <!-- 체크 아이콘 (활성 시 파란색) -->
+                            <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
+                                <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="sr-only">임의 활성화</span>
+                        </button>
+                        <span class="observation-card__title" id="observationTitle02"><b>임의</b></span>
+                    </div>
+                    <div class="observation-card__content" id="observationContent01">
+                        <div class="observation-card__item">
+                            <label class="observation-card__radio-label">
+                                <input type="radio" name="timeSelect" class="observation-card__radio"
+                                    aria-label="임의 조위값 선택" disabled>
+                                <span class="observation-card__radio-custom"></span>
+                            </label>
+                            <input type="text" class="form-input m0" placeholder="임의 조위값을 입력하세요">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">파고 <span>(단위:m)</span></h3>
+                <div>
+                    <div class="slider-wrap slider-wrap-flex">
+                        <label for="customRange" class="sr-only">값 조절 슬라이더</label>
+                        <input type="range" min="0" max="100" value="35" class="custom-slider" id="customRange"
+                            aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-label="값 조절 슬라이더">
+                        <span class="slider-value" id="slider1-value">20</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 기타관측정보 -->
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">기타 관측 정보</h3>
+                <section class="tab-section">
+                    <div class="tab-group" role="tablist" aria-label="관측소 또는 관측부이 선택">
+                        <button type="button" class="tab-group__tab tab-group__tab--selected" role="tab"
+                            aria-selected="true" aria-controls="tab-panel-info01" id="infoTab01"
+                            tabindex="0">조위관측소</button>
+                        <button type="button" class="tab-group__tab" role="tab" aria-selected="false"
+                            aria-controls="tab-panel-info02" id="infoTab02" tabindex="-1">해양관측부이</button>
+                    </div>
+
+                    <div id="tab-panel-info01" role="tabpanel" aria-labelledby="infoTab01">
+                        <section class="observation-etc">
+                            <dl class="observation-etc__list">
+                                <div class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>풍향</dt>
+                                    <dd><span class="observation-etc__value">171</span> <span
+                                            class="observation-etc__unit">deg</span></dd>
+                                </div>
+                                <div class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>풍속</dt>
+                                    <dd><span class="observation-etc__value">4.3</span> <span
+                                            class="observation-etc__unit">m/s</span></dd>
+                                </div>
+                                <div class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>기온</dt>
+                                    <dd><span class="observation-etc__value">19.3</span> <span
+                                            class="observation-etc__unit">℃</span></dd>
+                                </div>
+                                <div class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>기압</dt>
+                                    <dd><span class="observation-etc__value">1009.7</span> <span
+                                            class="observation-etc__unit">(hps)</span></dd>
+                                </div>
+                                <div class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>수온</dt>
+                                    <dd><span class="observation-etc__value">-</span> <span
+                                            class="observation-etc__unit">℃</span></dd>
+                                </div>
+                                <div class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>염분</dt>
+                                    <dd><span class="observation-etc__value">-</span> <span
+                                            class="observation-etc__unit">psu</span></dd>
+                                </div>
+                            </dl>
+                        </section>
+                    </div>
+                    <div id="tab-panel-info02" role="tabpanel" aria-labelledby="infoTab02" hidden>
+                        222
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 </section>
