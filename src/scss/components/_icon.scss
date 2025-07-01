@@ -84,64 +84,77 @@
     background-color: #C6C6C6;
 }
 
-// 레이어 아이콘 A 그룹 (01~15)
-@for $i from 1 through 15 {
-    $num: if($i < 10, '0#{$i}', '#{$i}');
-    .ico-layer-a-#{$num} {
-        @include icon-style('@/assets/images/icon/ico_layer_a_#{$num}.svg', 32px, 32px);
-        background-color: #555555;
-    }
-}
+$layer-icons-a: (
+    '01', '01_on','02', '02_on'
+);
+$layer-icons-b: (
+    '01', '01_on'
+);
 
-// 레이어 아이콘 B 그룹 (02~15)
-@for $i from 2 through 15 {
-    $num: if($i < 10, '0#{$i}', '#{$i}');
-    .ico-layer-b-#{$num} {
-        @include icon-style('@/assets/images/icon/ico_layer_b_#{$num}.svg', 32px, 32px);
-        background-color: #555555;
-    }
-}
+$layer-icons-c: (
+  '01', '01_on', '02', '02_on', '03', '03_on', '04', '04_on',
+  '05', '05_on', '06', '06_on', '07', '07_on', '07_2', '07_2_on',
+  '08', '08_on', '08_2', '08_2_on', '09', '09_on', '10','10_on',
+  '11','11_on','12','12_on'
+);
 
-// 레이어 아이콘 C 그룹 (03~15)
-@for $i from 3 through 15 {
-    $num: if($i < 10, '0#{$i}', '#{$i}');
-    .ico-layer-c-#{$num} {
-        @include icon-style('@/assets/images/icon/ico_layer_c_#{$num}.svg', 32px, 32px);
-        background-color: #555555;
-    }
-}
+$layer-icons-d: (
+  '01', '01_on', '02', '02_on', '03', '03_on'
+);
 
-// 레이어 아이콘 D 그룹 (03~15)
-@for $i from 3 through 15 {
-    $num: if($i < 10, '0#{$i}', '#{$i}');
-    .ico-layer-d-#{$num} {
-        @include icon-style('@/assets/images/icon/ico_layer_d_#{$num}.svg', 32px, 32px);
-        background-color: #555555;
-    }
-}
+$layer-icons-e: (
+  '01', '01_on', '02', '02_on', '03', '03_on'
+);
+$layer-icons-f: (
+  '01', '01_on', '02', '02_on'
+);
+
+$layer-icons-g: (
+  '01', '01_on'
+);
 
 
-@for $i from 3 through 15 {
-    $num: if($i < 10, '0#{$i}', '#{$i}');
-    .ico-layer-e-#{$num} {
-        @include icon-style('@/assets/images/icon/ico_layer_e-#{$num}.svg', 32px, 32px);
-        background-color: #555555;
-    }
+@each $name in $layer-icons-a {
+  .ico-layer-a-#{$name} {
+    @include icon-style('@/assets/images/icon/ico_layer_a_#{$name}.svg', 32px, 32px);
+  }
 }
 
 
-@for $i from 3 through 15 {
-    $num: if($i < 10, '0#{$i}', '#{$i}');
-    .ico-layer-e-#{$num} {
-        @include icon-style('@/assets/images/icon/ico_layer_f-#{$num}.svg', 32px, 32px);
-        background-color: #555555;
+@each $name in $layer-icons-b {
+    .ico-layer-b-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_b_#{$name}.svg', 32px, 32px);
     }
-}
+  }
 
-@for $i from 3 through 15 {
-    $num: if($i < 10, '0#{$i}', '#{$i}');
-    .ico-layer-e-#{$num} {
-        @include icon-style('@/assets/images/icon/ico_layer_g-#{$num}.svg', 32px, 32px);
-        background-color: #555555;
+  
+  @each $name in $layer-icons-c {
+    .ico-layer-c-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_c_#{$name}.svg', 32px, 32px);
     }
-}
+  }
+  
+
+  @each $name in $layer-icons-d {
+    .ico-layer-d-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_d_#{$name}.svg', 32px, 32px);
+    }
+  }
+  
+  @each $name in $layer-icons-e {
+    .ico-layer-e-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_e_#{$name}.svg', 32px, 32px);
+    }
+  }
+
+  @each $name in $layer-icons-f {
+    .ico-layer-f-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_f_#{$name}.svg', 32px, 32px);
+    }
+  }
+
+  @each $name in $layer-icons-g {
+    .ico-layer-g-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_g_#{$name}.svg', 32px, 32px);
+    }
+  }

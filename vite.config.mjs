@@ -1,15 +1,15 @@
+import chokidar from 'chokidar'
 import glob from 'fast-glob'
 import fs from 'fs'
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import handlebars from 'vite-plugin-handlebars'
-import chokidar from 'chokidar'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const projectName = 'vite-full-template'
+  const projectName = 'os3d'
 
-  const basePath = mode === 'production' ? './' : '/'
+  const basePath = mode === 'localbuild' ? './' : '/'
 
   const pagesPath = path.resolve(__dirname, 'src')
   const pageFiles = fs.readdirSync(pagesPath)
@@ -36,14 +36,31 @@ export default defineConfig(({ mode }) => {
     }
   })
 
+  console.log('🧪 현재 빌드 모드:', mode);
+
+  const isLocalBuild = mode === 'localbuild'
+
   return {
     root: 'src',
-    base: basePath,
+    base: './',
     publicDir: '../public',
     build: {
       outDir: '../dist',
       emptyOutDir: true,
       assetsInlineLimit: 0,
+      minify: isLocalBuild ? false : 'esbuild',
+      sourcemap: isLocalBuild,
+      esbuild: {
+        minify: false
+      },
+      terserOptions: {
+        compress: false,
+        mangle: false,
+        format: {
+          beautify: true,
+          indent_level: 2
+        }
+      },
       rollupOptions: {
         input: Object.fromEntries(
           glob.sync('src/*.html').map(file => {
@@ -62,16 +79,14 @@ export default defineConfig(({ mode }) => {
               return 'assets/images/[name][extname]'
             }
             return 'assets/[name][extname]'
-          }
-        },
-        // ✅ 공통 코드 별도 chunk로 분리
-        manualChunks(id) {
-          if (id.includes('/src/js/common/')) {
-            return 'common' // 👉 assets/js/common.js로 별도 chunk
+          },
+          manualChunks(id) {
+            if (id.includes('/src/js/common/')) {
+              return 'common'
+            }
           }
         }
-      },
-      minify: mode === 'localbuild' ? false : 'esbuild'
+      }
     },
     resolve: {
       alias: {
@@ -93,7 +108,6 @@ export default defineConfig(({ mode }) => {
             ignoreInitial: true
           })
           watcher.on('all', () => {
-            // 파일 변경시 강제 reload
             server.ws.send({
               type: 'full-reload'
             })
@@ -104,6 +118,8 @@ export default defineConfig(({ mode }) => {
         name: 'cleanup-html',
         closeBundle() {
           const distPath = path.resolve(__dirname, 'dist')
+          if (!fs.existsSync(distPath)) return
+
           const htmlFiles = fs.readdirSync(distPath).filter(f => f.endsWith('.html'))
 
           htmlFiles.forEach(file => {

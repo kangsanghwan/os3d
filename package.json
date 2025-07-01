@@ -1,9 +1,9 @@
 {
-  "name": "vite-full-template",
+  "name": "os3d",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode localbuild",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
