@@ -9,23 +9,32 @@
 @use 'components/card';
 @use 'components/icon';
 
-body {
-    // background-color: #f5f5f5;
-    // color: #333;
-    // background: url('@/assets/images/bg.png');
-}
+
 
 
 // 변수
-$font-family: 'pretendard',
+$font-family: 'Pretendard GOV',
 sans-serif;
 $color-sidebar-bg: #002f5c;
 $color-sidebar-hover: #0052a3;
 $color-primary: #196DFF;
 $color-text: #333;
 $color-muted: #666;
+body {
+    font-family: $font-family;
+}
 
-
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  color: inherit;
+  background: none;
+  border: none;
+}
 // 유틸리티
 .visually-hidden {
     position: absolute !important;
@@ -77,7 +86,7 @@ $color-muted: #666;
 }
 
 .mbb {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
     border-bottom: 4px solid #F0F0F0;
 }
 
@@ -648,6 +657,7 @@ body {
                 background-color: #196DFF;
                 transform: rotate(180deg);
                 transform-origin: 50% 50%;
+                top: 0;
             }
         }
 
@@ -747,6 +757,7 @@ body {
         border-bottom: 1px solid #003863;
     }
 }
+
 
 
 // tab
@@ -964,9 +975,48 @@ body {
     margin-bottom: 16px;
 }
 
+.panel--cont__item__ti{
+    &:has(.switch-item){
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
 
-
-
+.switch{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #E8E8E8;
+    input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .switch__slider{
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: all .3s;
+    }
+    &:has(input:checked){
+        background-color: #196DFF;
+        .switch__slider{
+            left: calc(100% - 18px);
+        }
+    }
+}
 
 
 
@@ -1108,6 +1158,229 @@ body {
 
 
 
-/* 
+/*
     25.06.24
 */
+.simul-settings{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .simul-settings__item{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &.vertical{
+            flex-direction: row;
+            align-items: center;
+            gap:0 8px;
+        }
+        h4{
+            font-size: 15px;
+            font-weight: 400;
+            color: #555;
+            em{
+                color: #999;
+                font-size: 0.975em;
+            }
+        }
+        .simul-row{
+            display: flex;
+            gap:0 8px;
+            &.flxwrap{
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+            .select-area{
+                flex: 1;
+            }
+            .unit-area{
+                width: 78px;
+                display: flex;
+                align-items: center;
+                gap:0 4px;
+                input{
+                    text-align: center;
+                    font-size: 14px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                .unit{
+                    font-size: 13px;
+                    color: #555;
+                }
+            }
+        }
+    }
+}
+.slide_range{
+    display: flex;
+    align-items: center;
+    gap:0 8px;
+    padding: 5px;
+    border-radius: 6px;
+    background: #eaeaea;
+    flex: 1;
+    input{
+        flex:1;
+    }
+    .value{
+        font-size: 14px;
+        color: #555;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 30px;
+        border-radius: 10px;
+        background: #fff;
+        border: 1px solid #C6C6C6;
+        color: #196DFF;
+    }
+}
+.color-picker{
+    display: flex;
+    align-items: center;
+    gap:0 8px;
+    padding: 5px;
+    border-radius: 6px;
+    background: #eaeaea;
+    input{
+        width: 30px;
+    }
+}
+.input-full{
+    width: 100%;
+}
+.slide_control{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:0 8px;
+    margin-top: 5px;
+    button{
+        border-radius: 4px;
+        background: none;
+        cursor: pointer;
+        transition: all .3s;
+        &:hover,
+        &:focus{
+            opacity: 0.8;
+        }
+        
+    }
+}
+
+
+// 컨트롤 버튼 스타일 개선
+.control-btn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    i{
+        display: inline-block;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: center;
+        -webkit-mask-position: center;
+        mask-size: 20px;
+        -webkit-mask-size: 20px;
+        background-color: #000;
+        width: 20px;
+        height: 20px;
+    }
+    &.active{
+        opacity: 1;
+        background-color: #196DFF;
+        i{
+            background-color: #fff;
+        }
+    }
+    
+    // 재생 버튼
+    &.play {
+        i{
+            mask-image: url(../assets/images/icon/play.svg);
+            -webkit-mask-image: url(../assets/images/icon/play.svg);
+        }
+    }
+    
+    // 일시정지 버튼
+    &.pause {
+        i{
+            mask-image: url(../assets/images/icon/pause.svg);
+            -webkit-mask-image: url(../assets/images/icon/pause.svg);
+        }
+    }
+    
+    // 정지 버튼
+    &.stop {
+        i{
+            mask-image: url(../assets/images/icon/stop.svg);
+            -webkit-mask-image: url(../assets/images/icon/stop.svg);
+        }
+    }
+}
+
+// 침수심 구분 범례 스타일
+.flood-legend-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 15px;
+  background: #ededed;
+  border-radius: 8px;
+  padding: 12px 15px;
+  width: fit-content;
+  font-size: 12px;
+  margin: 0;
+  list-style: none;
+}
+.flood-legend-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #222;
+  font-weight: 400;
+  margin: 0;
+}
+.flood-legend-color {
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+.flood-legend-color1 { background: #7b88f7; }
+.flood-legend-color2 { background: #7fd0ff; }
+.flood-legend-color3 { background: #6bb7bb; }
+.flood-legend-color4 { background: #7fffc1; }
+.flood-legend-color5 { background: #e6ff7f; }
+.flood-legend-color6 { background: #fff97f; }
+
+
+.simul-settings__item.space{
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+}
+.simul-typhoon{
+    display: flex;
+    align-items: center;
+    gap:0 8px;
+    .form-select{
+        flex:1;
+        margin-bottom: 0;
+    }
+    .typhoon-control{
+        display: flex;
+        align-items: baseline;
+        gap:0 8px;
+    }
+}

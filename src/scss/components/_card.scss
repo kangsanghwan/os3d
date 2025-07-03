@@ -32,10 +32,13 @@ $color-muted: #666;
     }
     &:has(input:checked) {
         border-color: #196DFF;
+        .object-type-btn__icon{
+            border-color: rgba(#196DFF, 0.2);
+            background-color: rgba(#196DFF, 0.2);
+        }
         label {
             i {
-                background-color: rgba(#196DFF, 0.2);
-                border-color: rgba(#196DFF, 0.2);
+                background-color: #196DFF;    
             }
         }
         span {
@@ -59,13 +62,21 @@ $color-muted: #666;
         opacity: 0;
         cursor: pointer;
     }
-    i {
-        display: block;
-        border: 1px solid #E4E4E4;
-        border-radius: 2px;
+    &__icon{
         width: 32px;
         height: 32px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #E4E4E4;
+        border-radius: 2px;
         background-color: #F0F0F0;
+    }
+    i {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-color: #424242;
+        mask-size: auto;
     }
     span {
         color: #1d1d1d;
@@ -283,6 +294,7 @@ $color-muted: #666;
             font-size: 15px;
             letter-spacing: -0.3px;
             position: relative;
+            white-space: nowrap;
             // 점 아이콘
             .observation-etc__dot {
                 display: inline-block;
@@ -315,16 +327,23 @@ $color-muted: #666;
             display: flex;
             align-items: baseline;
             gap: 4px;
+            
         }
     }
     &__value {
         font-size: 19px;
         font-weight: 700;
         color: #1D1D1D;
+        &.inp{
+            width:75px;border: 1px solid #ddd;padding: 2px 4px;border-radius: 4px;
+            text-align: center;
+            color: #196DFF;
+        }
     }
     &__unit {
         color: #1D1D1D;
         font-size: 13px;
+        
     }
 }
 
@@ -363,15 +382,16 @@ $color-muted: #666;
     &__title {
         font-size: 17px;
         font-weight: 700;
-        margin: 0 0 8px 0;
+        margin: 0 0 7px 0;
         color: #1D1D1D;
         letter-spacing: -0.2px;
+        line-height: 1;
     }
     &__desc {
-        font-size: 1.01rem;
+        font-size: 15px;
         color: #555555;
         margin: 0;
-        line-height: 1.7;
+        line-height: 1.5;
         letter-spacing: -0.1px;
         word-break: keep-all;
     }
